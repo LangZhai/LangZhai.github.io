@@ -10,6 +10,13 @@ body > article > section {
   text-align: justify;
   text-justify: distribute;
 }
+body > article > section pre {
+  background: #272822;
+  font-family: inherit;
+}
+body > article > section pre code {
+  font-family: inherit;
+}
 body > article > footer {
   border-top: 1px solid #ddd;
   font-size: 80%;
