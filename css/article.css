@@ -10,18 +10,6 @@ body > article > section {
   text-align: justify;
   text-justify: distribute;
 }
-body > article > section pre {
-  background: #272822;
-  color: #f8f8f2;
-  padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
-  border-radius: 0.3em;
-  font-family: inherit;
-}
-body > article > section pre code {
-  font-family: inherit;
-}
 body > article > footer {
   border-top: 1px solid #ddd;
   font-size: 80%;
