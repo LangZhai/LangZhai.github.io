@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="LangZhai(智能小菜菜)'s Blog">
+        <meta name="keywords" content="LangZhai,智能小菜菜,SmartCai">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <link rel="stylesheet" href="../css/article.min.css">
+        <!--[if lt IE 9]>
+        <script src="../lib/html5.min.js"></script>
+        <![endif]-->
+        <title>LangZhai(智能小菜菜)'s Blog</title>
+    </head>
+    <body>
+        <article>
+            <header><h1>LangZhai(智能小菜菜)'s Blog</h1></header>
+            <section>
+                <h2>列表</h2>
+                <ul id="list"></ul>
+            </section>
+            <footer>
+                <p>&copy; 2013-2016 <a href="https://github.com/LangZhai">LangZhai(智能小菜菜)</a></p>
+            </footer>
+        </article>
+        <script type="text/html" id="template_list">
+            <li><a href="article/#{data.name}.html">#{data.title}</a></li>
+        </script>
+        <script src="../lib/jquery-1.x.min.js"></script>
+        <script src="http://langzhai.github.io/ZLTemplate/dist/jquery.zltemplate.min.js"></script>
+        <script src="js/list.min.js"></script>
+    </body>
+</html>

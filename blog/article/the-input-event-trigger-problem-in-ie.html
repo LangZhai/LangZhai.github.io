@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="LangZhai(智能小菜菜)'s Blog">
+        <meta name="keywords" content="LangZhai,智能小菜菜,SmartCai">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <link rel="stylesheet" href="../../lib/prism/prism.min.css">
+        <link rel="stylesheet" href="../../css/article.min.css">
+        <!--[if lt IE 9]>
+        <script src="../../lib/selectivizr-min.js"></script>
+        <script src="../../lib/html5.min.js"></script>
+        <![endif]-->
+        <title>IE中input事件的触发问题-LangZhai(智能小菜菜)'s Blog</title>
+    </head>
+    <body>
+        <article>
+            <header><h1>IE中input事件的触发问题</h1></header>
+            <section>
+                <h2>起因</h2>
+                <p>做项目时用到了<a href="https://github.com/LangZhai/ZLTools" target="_blank">ZLTools</a>里的$.fn.placeholder，并且在input上绑定了“input”事件，页面做完后在各浏览器中测试都OK。</p>
+                <p>然后，正当准备关闭工程的时候，意外发现在IE10/11中刷新页面之后，这个“input”事件被自动触发了，而且每次刷新都会触发，其他浏览器则没有这个问题。</p>
+                <p>看了下代码，并没有主动去触发这个“input”事件，可为什么会有这样的问题呢？</p>
+                <p>为了避免受到其他代码的干扰，索性新写了一个页面测试，也是在input上使用$.fn.placeholder并绑定“input”事件，问题并没有重现。</p>
+                <p>回过头比较两个页面，发现第一个页面的input元素是通过<a href="https://github.com/LangZhai/ZLTemplate" target="_blank">ZLTemplate</a>渲染出来的，而二个页面不是。</p>
+                <p>因此在第二个页面上也使用ZLTemplate渲染，但奇怪的是，问题依然没有重现。</p>
+                <p>再次比较页面发现，第一个页面的input元素上有placeholder属性，而第二个页面上没有，难道是这个原因？</p>
+                <p>抱着姑且试一试的心态，在第二个页面的input元素上添加placeholder属性后，问题终于重现了……</p>
+                <p>这难道跟placeholder属性有什么关系么？</p>
+            </section>
+            <section>
+                <h2>原因</h2>
+                <p>为了进一步排除干扰，第二个页面去掉了所有的JS引用，连jQuery也不引用了，直接使用JS的原生接口，改造后的代码如下：</p>
+                <pre class="language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;script&gt;
+            var input = document.createElement('input');
+            input.placeholder = 'IE真棒！';
+            input.addEventListener('input', function () {
+                alert('IE真棒！');
+            });
+            document.body.appendChild(input);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <p>页面初次打开没问题，刷新一下，问题重现了！！！</p>
+                <p>就这么短短几行代码，到底哪行才是引发问题的关键呢？</p>
+                <p>上面提到过placeholder，于是将input.placeholder = 'IE真棒！';这行删掉后，问题真的消失了……</p>
+                <p>于是接着又对代码进行了如下的改造：</p>
+                <pre class="language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;script&gt;
+            var input = document.createElement('input');
+            input.addEventListener('input', function () {
+                alert('IE真棒！');
+            });
+            document.body.appendChild(input);
+            setTimeout(function () {
+                input.placeholder = 'IE真棒！';
+            }, 1000);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <p>这次设置了一个1秒的timeout，而很诡异的是，页面刷新后的一瞬间没有问题，当setTimeout中的代码执行后，“input”事件就被触发了……</p>
+                <p>难道真的是设置placeholder属性触发了“input”事件么？</p>
+                <p>在最后一次改造代码之前，我也是这样认为，然而：</p>
+                <pre class="language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;input id="fuckIE" type="text"&gt;
+        &lt;script&gt;
+            var input = document.getElementById('fuckIE');
+            setTimeout(function () {
+                input.placeholder = 'IE真棒！';
+            }, 1000);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <p>如果input不是JS追加进去的，而是本来就存在于页面上，就不会在设置placeholder属性的时候触发“input”事件了。╮(╯▽╰)╭</p>
+                <p>所以总结一下就是，在IE10/11中，通过JS追加的元素，设置placeholder属性的时候会触发“input”事件，然而这只是通过观察看到的现象，真正的原因仍然不得而知，不过好在知道了这一点，也就可以去避免这个问题了！</p>
+            </section>
+            <section>
+                <h2>解决</h2>
+                <p>其实很简单，在设置placeholder属性之后才绑定事件，如下：</p>
+                <pre class="language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;script&gt;
+            var input = document.createElement('input');
+            input.placeholder = 'IE真棒！';
+            document.body.appendChild(input);
+            setTimeout(function () {
+                input.addEventListener('input', function () {
+                    alert('IE真棒！');
+                });
+            }, 100);
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                <p>由于不知道input元素何时完成添加到body的这个动作，所以我现在能想到的就是setTimeout……，如果有更好的办法，望大家不吝赐教！</p>
+            </section>
+            <footer>
+                <p>&copy; 2013-2016 <a href="https://github.com/LangZhai">LangZhai(智能小菜菜)</a></p>
+            </footer>
+        </article>
+        <script src="../../lib/jquery-1.x.min.js"></script>
+        <script src="../../lib/prism/prism.min.js"></script>
+    </body>
+</html>
