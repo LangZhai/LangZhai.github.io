@@ -1,5 +1,7 @@
 $(function () {
     var url = location.href.substring(0, location.href.indexOf('/index.html'));
+
+    $.support.cors = true;
     $.ajax({
         url: 'http://langzhai.github.io' + url.substring(url.lastIndexOf('/')) + '/data.json',
         dataType: 'json'
