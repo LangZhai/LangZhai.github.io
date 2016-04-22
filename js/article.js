@@ -1,6 +1,6 @@
 $(function () {
     $.ajax({
-        url: 'data.json',
+        url: location.href + '/data.json',
         dataType: 'json'
     }).done(function (data) {
         $('body>article').html($('#template_article').template($.extend({
