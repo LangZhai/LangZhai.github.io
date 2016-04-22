@@ -1,6 +1,7 @@
 $(function () {
+    var url = location.href.substring(0, location.href.indexOf('/index.html'));
     $.ajax({
-        url: location.href + '/data.json',
+        url: 'http://langzhai.github.io' + url.substring(url.lastIndexOf('/')) + '/data.json',
         dataType: 'json'
     }).done(function (data) {
         $('body>article').html($('#template_article').template($.extend({
