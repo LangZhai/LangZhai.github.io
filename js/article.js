@@ -1,5 +1,5 @@
 $(function () {
-    var url = location.href.substring(0, location.href.indexOf('/index.html'));
+    var url = location.href.toString().replace(/(.(?!\/))*((\.html).*|\/$)/g, '');
 
     $.support.cors = true;
     $.ajax({
