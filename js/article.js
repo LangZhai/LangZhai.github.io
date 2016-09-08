@@ -1,7 +1,7 @@
 $(function () {
     $.support.cors = true;
     $.ajax({
-        url: (location.protocol === 'file:' ? $('#remoteUrl').attr('href') + '/' : '') + 'data.json',
+        url: (location.protocol === 'file:' ? remoteUrl + '/' : '') + 'data.json',
         dataType: 'json'
     }).done(function (data) {
         $('body>article').html($('#template_article').template(data));
