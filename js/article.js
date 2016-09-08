@@ -3,7 +3,7 @@ $(function () {
 
     $.support.cors = true;
     $.ajax({
-        url: 'http://langzhai.github.io' + url.substring(url.lastIndexOf('/')) + '/data.json',
+        url: 'https://langzhai.github.io' + url.substring(url.lastIndexOf('/')) + '/data.json',
         dataType: 'json'
     }).done(function (data) {
         $('body>article').html($('#template_article').template(data));
