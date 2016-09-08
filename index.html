@@ -10,6 +10,11 @@
         <!--[if lt IE 9]>
         <script src="lib/html5.min.js"></script>
         <![endif]-->
+        <script>
+            if (location.protocol === 'http:') {
+                location.protocol = 'https:';
+            }
+        </script>
         <title>LangZhai(智能小菜菜)'s Homepage</title>
     </head>
     <body>
