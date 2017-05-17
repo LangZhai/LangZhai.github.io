@@ -4,9 +4,9 @@ $(function () {
         url: (location.protocol !== 'file:' || typeof remoteUrl === 'undefined' ? '' : remoteUrl) + 'data.json',
         dataType: 'json'
     }).done(function (data) {
-        $('body>article').html($('#template_article').template(data));
+        document.querySelector('body>article').innerHTML = ZLTemplate('#template_article').template(data);
         if (data.code instanceof Array) {
-            $.each(data.code, function (i, item) {
+            data.code.forEach(function (item) {
                 eval(item);
             });
         } else {
