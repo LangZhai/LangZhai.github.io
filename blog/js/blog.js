@@ -12,7 +12,7 @@
                 document.querySelector('article').innerHTML = ZLTemplate('#template_article').template(data);
                 Prism.highlightAll();
             } else {
-                document.querySelector('#list').innerHTML = ZLTemplate('#template_list').template(Object.keys(data).map(function (item) {return Object.extend(data[item], {name: item})}).sort(function (a, b) {return a.time < b.time;}));
+                document.querySelector('#list').innerHTML = ZLTemplate('#template_list').template(Object.keys(data).map(function (item) {return Object.extend(data[item], {name: item});}).sort(function (a, b) {return a.time < b.time;}));
             }
         }
     };
