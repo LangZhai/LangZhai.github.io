@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="LangZhai(智能小菜菜)'s Blog">
+        <meta name="keywords" content="LangZhai,智能小菜菜,SmartCai">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <link rel="stylesheet" href="../../lib/prism/prism.min.css">
+        <link rel="stylesheet" href="../../css/article.min.css">
+        <script>
+            if (location.protocol === 'http:') {
+                location.protocol = 'https:';
+            }
+        </script>
+        <title>LangZhai(智能小菜菜)'s Blog</title>
+    </head>
+    <body>
+        <article></article>
+        <script type="text/html" id="template_article">
+            <header>
+                <h1>[#{data.type}] #{data.title}</h1>
+                <time>#{data.time}</time>
+            </header>
+            <section>
+                <h2>起因</h2>
+                <p>最近在做Egret游戏开发，起始页需要用HTML页面实现一些效果，以前做传统前端项目的时候总是习惯引入jQuery，但在Egret项目中没有jQuery的用武之地，难道要为了一个很小的事情多引入一个第三方库？这事怎么想都不划算，于是还是决定用原生JS来做。</p>
+                <p>最初确实感觉不顺手，用惯了jQuery，很多理所当然的事情都变得陌生了起来，但在经过查阅文档，又经过一番摸索之后，顿时感觉柳暗花明又一村，原来使用原生JS是这么的畅爽！</p>
+                <p>待续……</p>
+            </section>
+            <footer>
+                <p>&copy; #{data.copyright} <a href="https://github.com/LangZhai">LangZhai(智能小菜菜)</a></p>
+            </footer>
+        </script>
+        <script src="../../lib/prism/prism.min.js"></script>
+        <script src="https://langzhai.github.io/ZLTemplate/dist/zltemplate.min.js"></script>
+        <script src="../js/blog.min.js"></script>
+    </body>
+</html>

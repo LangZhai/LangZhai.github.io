@@ -1,8 +1,12 @@
-[
-    {
-        "name": "the-input-event-trigger-problem-in-ie",
+{
+    "the-input-event-trigger-problem-in-ie": {
         "title": "IE中input事件的触发问题",
         "type": "前端",
         "time": "2016-04-20"
+    },
+    "about-kill-jquery": {
+        "title": "关于杀死jQuery",
+        "type": "前端",
+        "time": "2017-06-02"
     }
-]
+}
