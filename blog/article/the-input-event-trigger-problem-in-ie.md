@@ -1,8 +1,6 @@
-# [LangZhai.github.io](https://langzhai.github.io)
+# __IE中input事件的触发问题__
 
-## __[前端] IE中input事件的触发问题__
-
-2016-04-20
+`前端` 2016-04-20
 
 ## 起因
 
