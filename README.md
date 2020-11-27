@@ -1,4 +1,4 @@
-# LangZhai(智能小菜菜)'s Homepage.
+# [LangZhai(智能小菜菜)'s Homepage](https://langzhai.github.io)
 
 ## 我是谁
 
