@@ -21,7 +21,7 @@ MySQL>SQLite>Oracle>SQL Server
 
 ## 我博客
 
-[LangZhai(智能小菜菜)'s Blog](https://langzhai.github.io/blog/list.md)
+[LangZhai(智能小菜菜)'s Blog](https://langzhai.github.io/blog/list.html)
 
 ## 我邮箱
 
