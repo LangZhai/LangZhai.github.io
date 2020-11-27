@@ -1,4 +1,4 @@
-# __LangZhai(智能小菜菜)'s Homepage__
+# LangZhai(智能小菜菜)'s Homepage
 
 ## 我是谁
 

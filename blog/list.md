@@ -1,4 +1,4 @@
-# __LangZhai(智能小菜菜)'s Blog__
+# LangZhai(智能小菜菜)'s Blog
 
 ## 列表
 
