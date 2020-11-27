@@ -138,5 +138,5 @@
 
 今天突然翻出这篇文章，突发奇想用英文关键字Bing了一下，得到一些意外发现，如下：
 
-* [[IE 11] Fires the input event when a input field with placeholder is focused | Microsoft Connect](https://connect.microsoft.com/IE/feedback/details/885747/ie-11-fires-the-input-event-when-a-input-field-with-placeholder-is-focused)
+* [[IE 11] Fires the input event when a input field with placeholder is focused \| Microsoft Connect](https://connect.microsoft.com/IE/feedback/details/885747/ie-11-fires-the-input-event-when-a-input-field-with-placeholder-is-focused)
 * [Fires the input event when a input field with placeholder is focused - Microsoft Edge Development](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/274987)
