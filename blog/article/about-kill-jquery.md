@@ -45,7 +45,7 @@ jQuery提供了最基本的动画效果，在它的帮助下，我们可以完�
 <p>
     <details>
         <summary>题外话</summary>
-        如果你在做一个面向主流用户的项目，但你的产品经理无论如何还是要求兼容IE8的话，那么恭喜你，你可以辞职了，去寻找另一番天地吧！
+        <i>如果你在做一个面向主流用户的项目，但你的产品经理无论如何还是要求兼容IE8的话，那么恭喜你，你可以辞职了，去寻找另一番天地吧！</i>
     </details>
 </p>
 
@@ -73,7 +73,7 @@ __事件__
 <p>
     <details>
         <summary>为什么说“几乎”？</summary>
-        实际上在jQuery中，事件还有两个非常重要的特性，一个是delegate，另外一个就是namespace，delegate在原生JS中可以通过判断Event.target来实现，namespace也有<a href="https://github.com/LangZhai/ZLTools/blob/gh-pages/dist/zltools.js" title="请查阅ZLTools.prototype.boxCut">比较迂回的实现方法</a>，但不得不承认，这都没有jQuery来得优雅。
+        <i>实际上在jQuery中，事件还有两个非常重要的特性，一个是delegate，另外一个就是namespace，delegate在原生JS中可以通过判断Event.target来实现，namespace也有<a href="https://github.com/LangZhai/ZLTools/blob/master/dist/zltools.js" title="请查阅ZLTools.prototype.boxCut">比较迂回的实现方法</a>，但不得不承认，这都没有jQuery来得优雅。</i>
     </details>
 </p>
 
