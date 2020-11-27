@@ -42,10 +42,12 @@ jQuery提供了最基本的动画效果，在它的帮助下，我们可以完�
 
 现在的主流浏览器都已经完整支持ES5特性了，大多数浏览器对ES6特性也提供了部分支持，另外据[caniuse.com](https://caniuse.com/#search=es5)显示，国内已经有89.63%的设备完整支持ES5，抛开严格模式以及parseInt()的一个小BUG，这一数字更是上升到了92.74%，因此只要我们编写规范的ES5代码，是不会在主流浏览器上出现兼容性问题的。
 
-<details>
-    <summary>题外话</summary>
-    如果你在做一个面向主流用户的项目，但你的产品经理无论如何还是要求兼容IE8的话，那么恭喜你，你可以辞职了，去寻找另一番天地吧！
-</details>
+<p>
+    <details>
+        <summary>题外话</summary>
+        如果你在做一个面向主流用户的项目，但你的产品经理无论如何还是要求兼容IE8的话，那么恭喜你，你可以辞职了，去寻找另一番天地吧！
+    </details>
+</p>
 
 ### 丰富的API
 
@@ -68,10 +70,12 @@ __事件__
 
 所有主流浏览器都支持addEventListener/removeEventListener/dispatchEvent，部分浏览器甚至支持once选项，我们几乎已经不再需要使用jQuery来进行事件操作了。
 
-<details>
-    <summary>为什么说“几乎”？</summary>
-    实际上在jQuery中，事件还有两个非常重要的特性，一个是delegate，另外一个就是namespace，delegate在原生JS中可以通过判断Event.target来实现，namespace也有<a href="https://github.com/LangZhai/ZLTools/blob/gh-pages/dist/zltools.js" title="请查阅ZLTools.prototype.boxCut">比较迂回的实现方法</a>，但不得不承认，这都没有jQuery来得优雅。
-</details>
+<p>
+    <details>
+        <summary>为什么说“几乎”？</summary>
+        实际上在jQuery中，事件还有两个非常重要的特性，一个是delegate，另外一个就是namespace，delegate在原生JS中可以通过判断Event.target来实现，namespace也有<a href="https://github.com/LangZhai/ZLTools/blob/gh-pages/dist/zltools.js" title="请查阅ZLTools.prototype.boxCut">比较迂回的实现方法</a>，但不得不承认，这都没有jQuery来得优雅。
+    </details>
+</p>
 
 __Ajax__
 
