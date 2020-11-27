@@ -1,10 +1,10 @@
 # [LangZhai.github.io](https://langzhai.github.io)
 
-LangZhai(智能小菜菜)'s Homepage.
+## __LangZhai(智能小菜菜)'s Homepage__
 
 ## 我是谁
 
-2010级~~CAVTC毕业生~~[CAP](http://www.cap.edu.cn/)毕业生一枚，目前干着苦逼的开发工作，主要做前端开发。籍贯四川成都，92年产，身高不超过170cm，体重大概在~~55kg~~~~60kg~~65kg，巨蟹座，好像是B型血，姑且算犬系，~~未婚，直男，但并不是直男癌【讲这么多废话是要闹甚！！！不会有妹子看上你的魂淡！！！】~~，已婚。
+2010级~~CAVTC毕业生~~[CAP](https://www.cap.edu.cn)毕业生一枚，目前干着苦逼的开发工作，主要做前端开发。籍贯四川成都，92年产，身高不超过170cm，体重大概在~~55kg~~~~60kg~~65kg，巨蟹座，好像是B型血，姑且算犬系，~~未婚，直男，但并不是直男癌【讲这么多废话是要闹甚！！！不会有妹子看上你的魂淡！！！】~~，已婚。
 
 ## 我擅长
 
@@ -21,7 +21,7 @@ MySQL>SQLite>Oracle>SQL Server
 
 ## 我博客
 
-[LangZhai(智能小菜菜)'s Blog](blog/list.md)
+[LangZhai(智能小菜菜)'s Blog](https://langzhai.github.io/blog/list.md)
 
 ## 我邮箱
 
