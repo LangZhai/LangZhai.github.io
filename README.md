@@ -1,6 +1,4 @@
-# [LangZhai.github.io](https://langzhai.github.io)
-
-## __LangZhai(智能小菜菜)'s Homepage__
+# __LangZhai(智能小菜菜)'s Homepage__
 
 ## 我是谁
 
